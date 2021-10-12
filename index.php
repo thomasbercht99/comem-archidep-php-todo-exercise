@@ -1,5 +1,5 @@
 <?php 
-define('BASE_URL', '/');
+define('BASE_URL', '/comem-archidep-php-todo-exercise/');
 
 // Database connection parameters.
 define('DB_USER', 'root');
@@ -55,7 +55,7 @@ if (isset($_POST['action'])) {
 
       $id = $_POST['id'];
       if(is_numeric($id)) {
-        $deleteQuery = "DELETE FROM todo WHERE todo.id=$id"; 
+        $deleteQuery = 'DELETE FROM todo WHERE todo.id='.$id; 
         if(!$db->query($deleteQuery)) {
           die(print_r($db->errorInfo(), true));
         }
