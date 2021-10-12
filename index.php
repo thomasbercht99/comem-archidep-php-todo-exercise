@@ -21,7 +21,7 @@ if (isset($_POST['action'])) {
 
       $title = $_POST['title'];
       if ($title && $title !== '') {
-        
+
         $insertQuery = 'INSERT INTO todo VALUES(NULL, \''.$title.'\', FALSE, CURRENT_TIMESTAMP)';
         if (!$db->query($insertQuery)) {
           die(print_r($db->errorInfo(), true));
@@ -55,7 +55,7 @@ if (isset($_POST['action'])) {
 
       $id = $_POST['id'];
       if(is_numeric($id)) {
-        $deleteQuery = "DELETE FROM todo WHERE todo.id=$id";  // IMPLEMENT ME
+        $deleteQuery = "DELETE FROM todo WHERE todo.id=$id"; 
         if(!$db->query($deleteQuery)) {
           die(print_r($db->errorInfo(), true));
         }
@@ -72,7 +72,7 @@ if (isset($_POST['action'])) {
 /**
  * Select all tasks from the database.
  */
-$selectQuery = ''; // IMPLEMENT ME
+$selectQuery = 'SELECT * FROM todo';
 $items = $db->query($selectQuery);
 
 ?>
