@@ -1,18 +1,12 @@
-<?php
-
-// The base path under which the application is exposed. For example, if you are
-// accessing the application at
-// "http://localhost:8888/comem-archidep-php-todo-exercise/", then BASE_URL
-// should be "/comem-archidep-php-todo-exercise/". If you are accessing the
-// application at "http://localhost:8888", then BASE_URL should be "/".
+<?php 
 define('BASE_URL', '/');
 
 // Database connection parameters.
-define('DB_USER', 'todolist');
-define('DB_PASS', 'chAngeMeN0w!');
+define('DB_USER', 'root');
+define('DB_PASS', 'root');
 define('DB_NAME', 'todolist');
 define('DB_HOST', '127.0.0.1');
-define('DB_PORT', '3306');
+define('DB_PORT', '8889');
 
 $db = new PDO('mysql:host='.DB_HOST.';port='.DB_PORT.';dbname='.DB_NAME, DB_USER, DB_PASS);
 $items = array();
@@ -79,6 +73,7 @@ if (isset($_POST['action'])) {
  */
 $selectQuery = ''; // IMPLEMENT ME
 $items = $db->query($selectQuery);
+
 ?>
 
 <html>
