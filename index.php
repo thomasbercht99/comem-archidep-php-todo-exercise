@@ -1,12 +1,12 @@
 <?php 
-define('BASE_URL', '/comem-archidep-php-todo-exercise/');
+define('BASE_URL', getenv('TODOLIST_BASE_URL') ?: '/');
 
 // Database connection parameters.
-define('DB_USER', 'root');
-define('DB_PASS', 'root');
-define('DB_NAME', 'todolist');
-define('DB_HOST', '127.0.0.1');
-define('DB_PORT', '8889');
+define('DB_USER', getenv('TODOLIST_BASE_USER') ?: 'todolist');
+define('DB_PASS', getenv('TODOLIST_BASE_PASS'));
+define('DB_NAME', getenv('TODOLIST_BASE_NAME') ?: 'todolist');
+define('DB_HOST', getenv('TODOLIST_BASE_HOST') ?: '127.0.0.1');
+define('DB_PORT', getenv('TODOLIST_BASE_PORT') ?: '8889');
 
 $db = new PDO('mysql:host='.DB_HOST.';port='.DB_PORT.';dbname='.DB_NAME, DB_USER, DB_PASS);
 $items = array();
